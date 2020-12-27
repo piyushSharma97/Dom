@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertBefore</title>
+</head>
+<body>
+    <p>To insert a node before another node as a child node of a parent node, you use the parentNode.insertBefore() method:</p>
+    <p>parentNode.insertBefore(newNode, existingNode);</p>
+
+    <ul id="menu">
+        <li>Services</li>   
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+    <script>
+
+        function insertBefore(newNode, existingNode) {
+            existingNode.parentNode.insertBefore(newNode, existingNode)
+        }
+        
+        let menu =document.querySelector('#menu')
+
+        let li = document.createElement('li')
+        li.textContent ="Home"
+        menu.insertBefore(li,menu.firstElementChild)
+    </script>
+</body>
+</html>

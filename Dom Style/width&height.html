@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //To get the element’s width and height that include padding and border, you use the offsetWidth and offsetHeight properties of the element:
+        let box = document.querySelector('div');
+let width = box.offsetWidth;
+let height = box.offsetHeight;
+//To get the element’s width and height that include padding but without the border, you use the clientWidth and clientHeight properties:
+let width = box.clientWidth;
+let height = box.clientHeight;
+
+// To get the margin of an element, you use the getComputedStyle() method:
+let style = getComputedStyle(box);
+let marginLeft = parseInt(style.marginLeft);
+let marginRight = parseInt(style.marginRight);
+let marginTop = parseInt(style.marginTop);
+let marginBottom = parseInt(style.marginBottom);
+//To get the border width of an element, you use the property of the style object returned by the getComputedStyle() method:
+let borderTopWidth = parseInt(style.borderTopWidth) || 0;
+let borderLeftWidth = parseInt(style.borderLeftWidth) || 0;
+let borderBottomWidth = parseInt(style.borderBottomWidth) || 0;
+let borderRightWidth = parseInt(style.borderRightWidth) || 0;
+
+//To get the height and width of the window
+let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    </script>
+</body>
+</html>

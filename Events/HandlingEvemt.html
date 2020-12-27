@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>There are three ways to assign event handlers</p>
+    <h3>1) HTML event handler attributes</h3>
+    <input type="button" value="Save" onclick="alert('Clicked!')">
+    <p>event handlers in script</p>
+    <input type="button" value="Save" onclick="showAlert()">
+    <p>event type   the code in the event handler can access the event object without explicitly defining it:</p>
+    <input type="button" value="Save" onclick="alert(event.type)">
+    <p>this . value the this value inside the event handler is equivalent to the event’s target element:</p>
+    <input type="button" value="Save" onclick="alert(this.value)">
+    <p> the event handler can access the element’s properties, for example:</p>
+    <input type="button" value="Save" onclick="alert(value)">
+<h3>2). DOM Level 0 event handlers</h3>
+<button id="btn"></button>
+
+<h3>3) DOM Level 2 event handlers</h3>
+<pre>
+    DOM Level 2 Event Handlers provide two main methods for dealing with the registering/deregistering event listeners:
+
+addEventListener() – register an event handler
+removeEventListener() – remove an event handler
+</pre>
+    <script>
+        //1
+ function showAlert() {
+        alert('Clicked 2!');
+    }
+    //2
+    let btn = document.querySelector('#btn');
+
+btn.onclick = function() {
+    alert('Clicked!');
+    alert(this.id); 
+};
+//btn.onclick = null;
+
+btn.addEventListener('click',function(event) {
+    alert(event.type); // click
+});
+
+btn.addEventListener('click', showAlert);
+
+// remove the event listener
+btn.removeEventListener('click', showAlert);
+
+btn.addEventListener('click',function() {
+   alert('Clicked!');
+});
+
+// won't work
+btn.removeEventListener('click', function() {
+   alert('Clicked!');
+});
+    </script>
+</body>
+</html>

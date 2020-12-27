@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="username" tabindex="1">
+    <input type="checkbox" id="chkAccept" checked> Accept
+
+    <input type="password" id="password" style="color:red;width:100%">
+
+
+    <div id="main" data-progress="pending" data-value="10%"></div>
+    <script>
+        //1
+        let input = document.getElementById('username')
+        input.setAttribute('tabindex', 2);
+       
+        
+        input.tabIndex = 3;
+  input.setAttribute('value','sarvika')
+        input.value ="piyush"
+        console.log(input);
+
+//2
+        let checkbox = document.querySelector('#chkAccept');
+    console.log(checkbox.checked); 
+//3
+    let password = document.querySelector('#password');
+
+let styleAttr = password.getAttribute('style');
+console.log(styleAttr);
+
+console.dir(input.style);
+
+//4
+let bar = document.querySelector('#main');
+console.log(bar.dataset);
+    </script>
+</body>
+</html>

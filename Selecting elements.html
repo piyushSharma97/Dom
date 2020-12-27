@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecting elements</title>
+</head>
+<body>
+    <div id="root">
+        The getElementById() returns an Element object that describes the 
+        DOM element object with the specified id. It returns null if there is no element with that id exists.
+    </div>
+    <input type="radio" name="language" value="JavaScript">
+    <input type="radio" name="language" value="TypeScript">
+
+    <p>Please rate the service:</p>
+    <p>
+        <input type="radio" name="rate" value="Very poor"> Very poor
+        <input type="radio" name="rate" value="Poor"> Poor
+        <input type="radio" name="rate" value="OK"> OK
+        <input type="radio" name="rate" value="Good"> Good
+        <input type="radio" name="rate" value="Very Good"> Very Good
+    </p>
+    <p>
+        <button id="btnRate">Submit</button>
+    </p>
+    <script>
+        let element = document.getElementById('root');
+        let elements = document.getElementsByName('language');
+
+        let btn = document.getElementById('btnRate');
+
+        btn.addEventListener('click', () => {
+            let rates = document.getElementsByName('rate');
+            rates.forEach((rate) => {
+                if (rate.checked) {
+                    alert(`You rated: ${rate.value}`);
+                }
+            })
+        })
+    </script>
+</body>
+</html>

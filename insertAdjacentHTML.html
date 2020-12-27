@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertAdjacentHTML</title>
+</head>
+<body>
+    <p>The insertAdjacentHTML() is a method of the Element interface so that you can invoke it from any element</p>
+
+    <p>The insertAdjacentHTML() method parses a piece of HTML text and inserts the resulting nodes into the DOM tree at a specified position</p>
+    <p>element.insertAdjacentHTML(positionName, text);</p>
+
+    <pre>
+        The positionName is a string that represents the position relative to the element. The positionName accepts one of the following four values:
+
+        'beforebegin': before the element
+        'afterbegin': before its first child of the element.
+        'beforeend': after the last child of the element
+        'afterend': after the element
+        Note that the 'beforebegin' and 'afterend' are only relevant if the element is in the DOM tree and has a parent element.
+        
+        The insertAdjacentHTML() method has no return value, or undefined by default.
+        
+        The text parameter is a string that the insertAdjacentHTML() method parses as HTML or XML. It cannot be Node objects
+    </pre>
+    <ul id="list">
+        <li>CSS</li>
+    </ul>
+
+    <script>
+        let list = document.querySelector('#list')
+
+        list.insertAdjacentHTML('beforebegin', '<h2>Web Technology</h2>');
+         list.insertAdjacentHTML('afterbegin', '<li>HTML</li>');
+         list.insertAdjacentHTML('beforeend', '<li>JavaScript</li>');
+         list.insertAdjacentHTML('afterend', '<p>For frontend developers</p>');
+    </script>
+</body>
+</html>

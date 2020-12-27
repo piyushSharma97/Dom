@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cloneNode</title>
+</head>
+<body>
+    <p>The cloneNode() is a method of the Node interface that allows you to clone an element:</p>
+    deep
+    <pre>
+        The cloneNode() method accepts an optional parameter deep:
+
+        If the deep is true, then the original node and all of its descendants are cloned.
+        If the deep is false, only the original node will be cloned. All the node’s descendants will not be cloned.
+        The deep parameter defaults to false if you omit it
+    </pre>
+<pre>
+    originalNode
+The originalNode is the element to be cloned.
+
+Besides the DOM structure, the cloneNode() copies all attributes and inline listeners of the original node. However, it doesn’t copy
+ the event listeners added via addEventListener() or assignment to element’s properties such as originalNode.onclick = eventHandler()
+</pre>
+<pre>
+    If you clone a node with an id attribute and place the cloned node in the same document, the id will be duplicate. 
+    In this case, you need to change the id before adding it to the DOM tree.
+</pre>
+
+<ul id="menu">
+    <li>Home</li>
+    <li>Services</li>
+    <li>About</li>
+    <li>Contact</li>
+</ul>
+<script>
+    let menu = document.querySelector('#menu');
+    let cloned = menu.cloneNode(true)
+    cloned.id="clonedmenu"
+
+    document.body.appendChild(cloned)
+</script>
+</body>
+</html>

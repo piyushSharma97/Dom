@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>To get the text content of a node and its descendants, you use the textContent property:</p>
+    <p>let text = node.textContent;</p>
+
+    <div id="note">
+        JavaScript textContent Demo!
+        <span style="display:none">Hidden Text!</span>
+        <!-- my comment -->
+    </div>
+    <script>
+        let node = document.getElementById("note")
+        console.log(node.textContent);
+        // difference
+        console.log(note.innerText);
+
+    </script>
+</body>
+</html>

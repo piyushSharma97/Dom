@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classList</title>
+</head>
+<body>
+    <p>The classList is a read-only property of an element that returns a live collection of CSS classes:</p>
+    <p>The classList is a DOMTokenList object that represents the contents of the element’s class attribute.</p>
+    <p>const classes = element.classList;</p>
+    <div id="content" class="main red">JavaScript classList</div>
+
+    <script>
+//         Get the CSS classes of an element
+// Suppose that you have a div element with two classes: main and red.
+let div = document.querySelector('#content')
+console.log(div.classList);
+// Add one or more classes to the class list of an element
+div.classList.add('info','visible','block')
+
+div.classList.remove('red');
+
+div.classList.replace('info','warning');
+
+div.classList.contains('warning'); //The contains() method returns true if the classList contains a specified class; otherwise false
+
+div.classList.toggle('visible');
+
+for (let cssClass of div.classList) {
+    console.log(cssClass);
+}
+    </script>
+</body>
+</html>

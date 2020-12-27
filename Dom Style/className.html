@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>className</title>
+</head>
+<body>
+    <p>element.className    </p>
+    <p>The className is the property of an element. It returns a space-separated list of CSS classes of the element</p>
+    <ul id="menu" class="vertical main">
+        <li>Homepage</li>
+        <li>Services</li>
+        <li>About</li>
+        <li>Contact</li>
+     </ul>
+<p>To set a class to an element, you use the following code:</p>
+     <p>element.className += newClassName;</p>
+     <p>The += operator adds the newClassName to the existing class list of the element.</p>
+     <p>element.className = "class1 class2";</p>
+
+     <div id="note" class="info yellow-bg red-text">JS className</div>
+     <script>
+         let menu = document.querySelector('#menu');
+         console.log(menu.className);
+        //  let classes = element.className;
+
+        let note = document.querySelector('#note');
+console.log(note.className);
+console.log(note.classList);
+     </script>
+</body>
+</html>

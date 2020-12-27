@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>removeChild</title>
+</head>
+<body>
+    
+
+    <p>To remove a child element of a node, you use the removeChild() method:</p>
+    <p>let childNode = parentNode.removeChild(childNode);</p>
+    <pre>
+        The removeChild() returns the removed child node from the DOM tree but keeps it in the memory, which can be used later.
+
+If you don’t want to keep the removed child node in the memory, you use the following syntax:
+parentNode.removeChild(childNode);
+
+    </pre>
+    <ul id="menu">
+        <li>Home</li>
+        <li>Products</li>
+        <li>About Us</li>
+    </ul>
+    <script>
+        let menu = document.getElementById('menu');
+menu.removeChild(menu.lastElementChild);
+// remove all children
+// while (menu.firstChild) {
+//     menu.removeChild(menu.firstChild);
+// }
+
+
+//You can remove all child nodes of an element by setting the innerHTML property of the parent node to blank
+
+// let menu = document.getElementById('menu');
+// menu.innerHTML = '';
+    </script>
+</body>
+</html>

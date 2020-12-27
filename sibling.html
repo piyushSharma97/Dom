@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>siblings</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>Products</li>
+        <li class="current">Customer Support</li>
+        <li>Careers</li>
+        <li>Investors</li>
+        <li>News</li>
+        <li>About Us</li>
+    </ul>
+<p>To get the next sibling of an element, you use the nextElementSibling attribute:</p>
+<p>let nextSibling = currentNode.nextElementSibling;</p>
+    <script>
+let current = document.querySelector('.current');
+let nextSibling = current.nextElementSibling;
+console.log('next');
+while(nextSibling) {
+    console.log(nextSibling);
+    nextSibling = nextSibling.nextElementSibling;
+}
+
+console.log('previous');
+let prevSibling = current.previousElementSibling;
+while(prevSibling) {
+    console.log(prevSibling);
+    prevSibling = prevSibling.previousElementSibling;
+}
+
+let getSiblings = function(e){
+ // for collecting siblings
+ let siblings = [];
+ console.log(e.parentNode);
+ if(!e.parentNode){
+     return siblings;
+ }
+ let sibling  = e.parentNode.firstChild;
+ console.log('sibling',sibling);
+ while(sibling){
+    if (sibling.nodeType === 1 && sibling !== e) {
+                    siblings.push(sibling);
+                }
+                sibling= sibling.nextSibling;
+                console.log('sibling 2',sibling)
+ }
+ return siblings
+}
+let siblings = getSiblings(document.querySelector('.current'));
+siblingText = siblings.map(e => e.innerHTML);
+console.log('siblingText',siblingText);
+    </script>
+</body>
+</html>

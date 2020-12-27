@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="username" secured="true">
+<pre>
+    
+    To access both standard and non-standard attributes, you use the following methods:
+
+    element.getAttribute(name) – get the attribute value
+    element.setAttribute(name, value) – set the value for the attribute
+    element.hasAttribute(name) – check for the existence of an attribute
+    element.removeAttribute(name) – remove the attribute
+
+
+    The element.attributes property provides a live collection of attributes available on a specific element
+</pre>
+    <script>
+        let input = document.querySelector('#username');
+console.log(input.secured); // undefined
+console.log(input.type); //
+console.log(input.id)
+console.log(input.attributes);
+for(let attr of input.attributes) {
+    console.log(`${attr.name} = ${attr.value}` )  
+}
+    </script>
+</body>
+</html>

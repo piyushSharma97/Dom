@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getComputedStyle</title>
+    <style type="text/css">
+        .message {
+            background-color: #fff3d4;
+            border: solid 1px #f6b73c;
+            padding: 20px;
+            color: black;
+        }
+        body {
+            font: arial, sans-serif;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        p::first-letter {
+            font-size: 1.5em;
+            font-weight: normal
+        }
+    </style>
+</head>
+<body>
+    <p>The getComputedStyle() is a method of the window object, which returns an object that contains the computed style an element:</p>
+    <p>let style = window.getComputedStyle(element [,pseudoElement]);</p>
+    <pre>
+        The getComputedStyle() method accepts two arguments:
+
+element is the element that you want to return the computed styles. If you pass another node type e.g., Text node, the method will throw an error.
+pseudoElement specifies the pseudo-element to match. It defaults to null.
+    </pre>
+    <p id='main'>JavaScript getComputedStyle() Demo for pseudo-elements</p>
+    <p class="message" style="color:red">
+        This is a JS getComputedStyle() Demo!
+    </p>
+    <script>
+         let message = document.querySelector('.message');
+        let style = getComputedStyle(message);
+
+        console.log(style);
+        console.log(style.color);
+        console.log(style.backgroundColor)
+
+        let p = document.getElementById('main');
+// with pseudo element
+        let styles = getComputedStyle(p, '::first-letter');
+        console.log(styles.fontSize);
+    </script>
+</body>
+</html>

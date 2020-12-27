@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="demo">DOM Tutorial</title>
+</head>
+<body>
+    <h1>DOM 1</h1>
+    <h4>I am Piyush Shamra</h4>
+    <p class="web developer frontend demo">A web developer</p>
+    <span>Nodejs</span>
+    Learning DOM
+    <p id="version">I am very happy</p>
+    <script>
+var a = document.querySelector('p.developer').innerHTML
+document.write(a)
+console.log(a);
+var b =document.getElementsByClassName('developer')
+console.log(b);
+for (i = 0; i < b.length; i++) {
+  b[i].style.color = "red";
+}
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS CreateElement Demo</title>
+</head>
+<body>
+<p>To create an HTML element, you use the document.createElement() method:</p>
+
+
+<ul id="menu">
+    <li>Home</li>
+</ul>
+<script>
+    let div = document.createElement('div');
+    div.innerHTML ='<p>CrateElement Example</p>'
+ div.id="example"
+ div.className="classes"
+ // create a new text node and add it to the div
+ let text = document.createTextNode('Hello Iam Piyush Sharma')
+ let text2 = document.createTextNode('I am a web developer ')
+ div.appendChild(text2)
+ div.appendChild(text)
+ let h2 = document.createElement('h2');
+ h2.textContent = 'Add h2 element to the div';
+ div.appendChild(h2)
+
+    document.body.appendChild(div)
+
+    console.log(div);
+
+let menu = document.getElementById('menu');
+let li = document.createElement('li');
+li.textContent = 'Products'
+menu.appendChild(li)
+
+li = document.createElement('li');
+li.textContent = 'About Us';
+menu.appendChild(li);
+
+let script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '/lib.js'
+document.body.appendChild(script);
+
+
+function loadJS(url) {
+    let script = document.createElement('script');
+    script.src = url;
+    script.async = true;
+    document.body.appendChild(script);
+}
+loadJS('/lib.js');
+</script>
+</body>
+</html>
